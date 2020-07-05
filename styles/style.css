@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: blanchedalmond;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+.btn-start {
+  margin-bottom: 40px;
+}
+
+#instructions.inactive {
+  position: static;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+
+#instructions {
+  position: absolute;
+  top: 140px;
+  opacity: 1;
+  height: 500px;
+  width: 500px;
+  background-color: white;
+}
+
+canvas {
+  position: absolute;
+  transition: opacity 2s ease-in-out 0.5s;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  display: block;
+}
+
+
+canvas.active {
+  position: static;
+  opacity: 1;
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+  background-color: white;
+}
