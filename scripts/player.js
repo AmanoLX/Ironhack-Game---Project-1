@@ -4,7 +4,7 @@ class Player extends Component {
   }
 
   move() {
-
+    
     document.onkeydown = event => {
       const key = event.keyCode;
       const possibleKeysStrokes = [37, 38, 39, 40]; // arrow keys

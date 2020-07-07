@@ -8,10 +8,12 @@ class Game {
     this.y = 0;
     this.width = 500;
     this.height = 500;
+    this.timer = new Timer();
   }
 
   init() { // adding values we need for the game
     this.start();
+    this.timer.updateCountdown();
   }
 
   start() {
@@ -20,29 +22,9 @@ class Game {
       this.clearCanvas();
       this.drawPlayerCharacter();
       this.drawSamaCharacter();
-      this.player.move();
-      // for (let i = 0; i < this.obstacles.length; i++) {
-      //   this.obstacles[i].move();
-      //   this.obstacles[i].draw();
-      //   this.car.crashCollision(this.obstacles[i]);
-      //   if (this.obstacles[i].y > 800) {
-      //     this.obstacles.splice(i, 1);
-      //   }
-      // }
+      this.player.move();      
     }, 1000 / 60);
   }
-
-
-  // drawBackground() {
-  //   this.backgroundImg.src = './images/road.png';
-  //   this.ctx.drawImage(
-  //     this.backgroundImg,
-  //     this.x,
-  //     this.y,
-  //     this.width,
-  //     this.height
-  //   );
-  // }
 
   drawPlayerCharacter() {
     this.player.drawComponent('./images/daddy-2-475205.png');

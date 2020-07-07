@@ -13,7 +13,6 @@ startBtn.addEventListener("click", function(e){
   gameIntro.classList.add("inactive");
   gameSec.classList.add("active");
   startGame();
-  updateCountdown();
 });
 
 
