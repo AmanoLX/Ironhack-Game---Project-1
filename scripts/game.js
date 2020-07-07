@@ -1,28 +1,25 @@
 class Game {
   constructor() {
-    this.canvas = undefined;
-    this.ctx = undefined;
-    this.player = new Player(this, 200, 550, 100, 150);
-    this.x = undefined;
-    this.y = undefined;
-    this.width = 100;
-    this.height = 700;
+    this.canvas = document.getElementById('canvas');
+    this.ctx = this.canvas.getContext('2d');
+    this.player = new Player(this, 0, 0, 50, 50);
+    this.sama = new Sama(this, 450, 450, 50, 50);
+    this.x = 0;
+    this.y = 0;
+    this.width = 500;
+    this.height = 500;
   }
 
   init() { // adding values we need for the game
-    this.canvas = document.getElementById('canvas');
-    this.ctx = this.canvas.getContext('2d');
-    this.x = 0;
-    this.y = 0;
     this.start();
   }
 
   start() {
-    this.drawBackground();
     this.drawPlayerCharacter();
     setInterval(() => {
       this.clearCanvas();
       this.drawPlayerCharacter();
+      this.drawSamaCharacter();
       this.player.move();
       // for (let i = 0; i < this.obstacles.length; i++) {
       //   this.obstacles[i].move();
@@ -48,7 +45,11 @@ class Game {
   // }
 
   drawPlayerCharacter() {
-    this.player.drawComponent('../images/daddy-2-475205.png');
+    this.player.drawComponent('./images/daddy-2-475205.png');
+  }
+
+  drawSamaCharacter() {
+    this.sama.drawComponent('/images/baby-idea-icon.png');
   }
 
   clearCanvas() {

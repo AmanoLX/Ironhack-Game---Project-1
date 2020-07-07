@@ -13,22 +13,22 @@ class Player extends Component {
         switch (key) {
           case 37: // left arrow, x axis
             if (this.x >= 10) {
-              this.x -= 20;
+              this.x -= 10;
             }
             break;
           case 38: // up arrow, y axis
             if (this.y >= 10) {
-              this.y -= 20;
+              this.y -= 10;
             }
             break;
           case 39: // right arrow, x axis
             if (this.x <= 490 - this.width) {
-              this.x += 20;
+              this.x += 10;
             }
             break;
           case 40: // down arrow, y axis
-            if (this.y <= 690 - this.height) {
-              this.y += 20;
+            if (this.y <= 490 - this.height) {
+              this.y += 10;
             }
             break;
         }

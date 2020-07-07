@@ -3,28 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
   <title>Maze Game || Saving Sama </title>
 </head>
-<body>
+  <body>
 
-  <header>
-    <h1>Saving Sama</h1>
-    <button class="btn-start">Start Game</button>
-  </header>
-  
+    <main>
+      <section id="game-intro">
+        <h1>Saving Sama</h1>
+        <h2>Game Instructions</h2>
+        <p>Baby Sama needs help from daddy!</p>
+        <img src="./images/baby-idea-icon.png" alt="baby image">
+        <p>She is hungry and wants her food within 30 seconds. Use the arrow keys to move daddy through the maze and reach Sama in time before all hell breaks loose!</p>
+        <button class="btn-start">Start Game</button>
+      </section>
 
-  <main>
-    <section id="instructions">
-      <h2>Game Instructions</h2>
-      <p>Baby Sama needs help from daddy!</p>
-      <p>She is hungry and wants her food within 30 seconds. Use the arrow keys to move daddy through the maze and reach Sama in time before all hell breaks loose!</p>
-    </section>
-    <canvas id="canvas"></canvas>
-  </main>
-  
+      <section id="game-section">
+        <p class="timer">30 Seconds</p>
+        <canvas id="canvas" width="500" height="500"></canvas>
+      </section>
+      
+    </main>
+    
 
-  <script src="/scripts/main.js"></script>
-  <script src="/scripts/game.js"></script>
-</body>
+    <script src="./scripts/component.js"></script>
+    <script src="./scripts/player.js"></script>
+    <script src="./scripts/sama.js"></script>
+    <script src="./scripts/game.js"></script>
+    <script src="./scripts/timer.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
 </html>

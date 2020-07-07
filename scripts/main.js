@@ -1,19 +1,19 @@
-// const canvas = document.getElementById("canvas");
-// const ctx = canvas.getContext("2d");
-
 // ctx.beginPath();
 // ctx.moveTo(250, 0);
 // ctx.lineTo(250, 400);
 // ctx.stroke();
 
 const startBtn = document.querySelector('.btn-start');
-const instructions = document.querySelector('#instructions');
+const gameIntro = document.querySelector('#game-intro');
+const gameSec = document.querySelector('#game-section');
 
-startBtn.addEventListener("click", function(){
-  canvas.classList.add('active');
-  canvas.style.display = "block";
-  instructions.classList.add("inactive");
+startBtn.addEventListener("click", function(e){
+  e.preventDefault();
+
+  gameIntro.classList.add("inactive");
+  gameSec.classList.add("active");
   startGame();
+  updateCountdown();
 });
 
 
