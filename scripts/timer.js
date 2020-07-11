@@ -4,7 +4,7 @@ const modal = document.querySelector('.modal')
 class Timer {
   constructor() {
     this.timerEl = timerEl;
-    this.startingSeconds = 3;
+    this.startingSeconds = 11;
   }
   
   updateCountdown() {  
@@ -42,7 +42,7 @@ function gameOverScreen() {
   modal.innerHTML = `
     <p class="timer">You lost the game!</p>
     <p>Oh no! Too late... Now Sama is crying. Try again to make her calm.</p>
-    <img src="../images/baby-crying-icon.png" width="200px">
+    <img src="./images/baby-crying-icon.png" width="200px">
   `;
 }
 
@@ -54,7 +54,7 @@ function winScreen() {
   modal.innerHTML = `
     <p class="timer">You won the game!</p>
     <p>Yes you did it! Sama is so happy right now.</p>
-    <img src="../images/baby-laughing-icon.png" width="200px">
+    <img src="./images/baby-laughing-icon.png" width="200px">
   `;
 }
 

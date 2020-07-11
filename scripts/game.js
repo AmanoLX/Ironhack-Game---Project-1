@@ -40,7 +40,7 @@ class Game {
   }
 
   drawSamaCharacter() {
-    this.sama.drawComponent('/images/baby-idea-icon.png');
+    this.sama.drawComponent('./images/baby-idea-icon.png');
   }
 
   createObstacles() {
