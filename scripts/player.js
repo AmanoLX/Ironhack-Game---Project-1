@@ -36,16 +36,16 @@ class Player extends Component {
     }
   }
 
-  wallCollision(element) {
-    // y axis
-    if (this.y + 10 <= element.y + element.height && this.y >= element.y) {
-      // x axis
-      if (this.x >= element.x && this.x <= element.x + element.width) {
-        setTimeout(() => {
-          alert('crash')
-        }, 5);
-        window.location.reload();
-      }
-    }
-  }
+  // wallCollision(element) {
+  //   // y axis
+  //   if (this.y + 10 <= element.y + element.height && this.y >= element.y) {
+  //     // x axis
+  //     if (this.x >= element.x && this.x <= element.x + element.width) {
+  //       setTimeout(() => {
+  //         alert('crash')
+  //       }, 5);
+  //       window.location.reload();
+  //     }
+  //   }
+  // }
 }

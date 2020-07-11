@@ -4,7 +4,7 @@ const modal = document.querySelector('.modal')
 class Timer {
   constructor() {
     this.timerEl = timerEl;
-    this.startingSeconds = 11;
+    this.startingSeconds = 3;
   }
   
   updateCountdown() {  
@@ -16,7 +16,7 @@ class Timer {
       timerEl.style.color = 'red';
     }
     
-    // if((player.x && player.y === sama.x && sama.y) && this.startingSeconds > 0){
+    // if(this.player.x + this.player.width >= this.sama.x){
     //   clearInterval(timeinterval);
     //   setTimeout(() => {
     //     winScreen();
