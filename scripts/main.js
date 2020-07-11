@@ -1,8 +1,3 @@
-// ctx.beginPath();
-// ctx.moveTo(250, 0);
-// ctx.lineTo(250, 400);
-// ctx.stroke();
-
 const startBtn = document.querySelector('.btn-start');
 const gameIntro = document.querySelector('#game-intro');
 const gameSec = document.querySelector('#game-section');

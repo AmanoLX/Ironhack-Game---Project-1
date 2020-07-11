@@ -22,6 +22,7 @@ class Game {
       this.clearCanvas();
       this.drawPlayerCharacter();
       this.drawSamaCharacter();
+      this.drawWall();
       this.player.move();      
     }, 1000 / 60);
   }
@@ -36,5 +37,12 @@ class Game {
 
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  }
+
+  drawWall() {
+    this.ctx.beginPath();
+  this.ctx.moveTo(250, 0);
+  this.ctx.lineTo(250, 400);
+  this.ctx.stroke();
   }
 }

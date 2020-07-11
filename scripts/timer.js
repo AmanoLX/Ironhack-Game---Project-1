@@ -1,15 +1,10 @@
-// Set time we're counting down from
-// const timerEl = document.querySelector('.timer');
-// const startingSeconds = 5;
-// let seconds = startingSeconds;
-
 const timerEl = document.querySelector('.timer')
+const modal = document.querySelector('.modal')
 
 class Timer {
   constructor() {
     this.timerEl = timerEl;
     this.startingSeconds = 11;
-
   }
   
   updateCountdown() {  
@@ -17,15 +12,50 @@ class Timer {
     this.startingSeconds--;
     this.timerEl.innerHTML = `${this.startingSeconds} seconds`;
 
+    if(this.startingSeconds <= 3) {
+      timerEl.style.color = 'red';
+    }
+    
+    // if((player.x && player.y === sama.x && sama.y) && this.startingSeconds > 0){
+    //   clearInterval(timeinterval);
+    //   setTimeout(() => {
+    //     winScreen();
+    //   }, 1500);
+    // }
+
+
     if (this.startingSeconds <= 0) {
       clearInterval(timeinterval);
-      setTimeout(() => alert('Game over!'), 1000);
+      setTimeout(() => {
+        gameOverScreen();
+        }, 1500);
       }
     }, 1000);
   }
 }
 
+function gameOverScreen() {
+  canvas.style.display = 'none';
+  modal.classList.add("lost");
+  timerEl.style.color = '#000';
 
+  modal.innerHTML = `
+    <p class="timer">You lost the game!</p>
+    <p>Oh no! Too late... Now Sama is crying. Try again to make her calm.</p>
+    <img src="../images/baby-crying-icon.png" width="200px">
+  `;
+}
 
+function winScreen() {
+  canvas.style.display = 'none';
+  modal.classList.add("won");
+  timerEl.style.color = '#000';
+
+  modal.innerHTML = `
+    <p class="timer">You won the game!</p>
+    <p>Yes you did it! Sama is so happy right now.</p>
+    <img src="../images/baby-laughing-icon.png" width="200px">
+  `;
+}
 
 
