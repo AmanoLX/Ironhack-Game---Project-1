@@ -4,7 +4,7 @@ const modal = document.querySelector('.modal')
 class Timer {
   constructor() {
     this.timerEl = timerEl;
-    this.startingSeconds = 11;
+    this.startingSeconds = 21;
   }
   
   updateCountdown() {  

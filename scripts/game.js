@@ -26,12 +26,9 @@ class Game {
       this.clearCanvas();
       this.drawPlayerCharacter();
       this.drawSamaCharacter();
-  
-        this.obstacles[0].drawWall(); 
-      
-
-      this.player.move();  
-      
+      this.obstacles[0].drawWall(); 
+      this.player.move(this.obstacles[0]);  
+      //this.player.wallCollision();
     }, 1000 / 60);
   }
 
@@ -45,10 +42,7 @@ class Game {
 
   createObstacles() {
     this.obstacles.push(new Obstacle(this, 250, 0, 250, 400));
-
-
   }
-
 
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);

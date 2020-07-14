@@ -3,7 +3,7 @@ class Player extends Component {
     super(game, x, y, w, h);
   }
 
-  move() {
+  move(obstacle) {
     
     document.onkeydown = event => {
       const key = event.keyCode;
@@ -12,7 +12,7 @@ class Player extends Component {
       if (possibleKeysStrokes.includes(key)) {
         switch (key) {
           case 37: // left arrow, x axis
-            if (this.x >= 10) {
+            if (this.x >= 10 && this.wallRightSide(obstacle)) {
               this.x -= 10;
             }
             break;
@@ -22,7 +22,7 @@ class Player extends Component {
             }
             break;
           case 39: // right arrow, x axis
-            if (this.x <= 490 - this.width) {
+            if (this.x <= 490 - this.width && this.wallLeftSide(obstacle)){
               this.x += 10;
             }
             break;
@@ -35,17 +35,33 @@ class Player extends Component {
       }
     }
   }
+  
+  wallLeftSide(obstacle){
+    console.log(obstacle.endY, this.y)
+    if(obstacle.initialX <= this.x + this.width && obstacle.endY >= this.y){
+      return false
+    }else{
+      return true
+    }
+  }
+  wallRightSide(obstacle){
+    if(obstacle.initialX >= this.x && obstacle.endY >= this.y){
+      return false
+    }else{
+      return true
+    }
+  }
+  // initialX, initialY, endX, endY
 
-  // wallCollision(element) {
-  //   // y axis
-  //   if (this.y + 10 <= element.y + element.height && this.y >= element.y) {
-  //     // x axis
-  //     if (this.x >= element.x && this.x <= element.x + element.width) {
-  //       setTimeout(() => {
-  //         alert('crash')
-  //       }, 5);
-  //       window.location.reload();
-  //     }
-  //   }
-  // }
+  wallCollision(obstacle) {
+    // y axis
+    if (obstacle.initialY  <= this.player.y + this.player.height && obstacle.endY === this.player.y) {
+      // x axis
+      if (obstacle.initialX === this.player.x || obstacle.initialX === this.player.x + this.player.width) {
+        setTimeout(() => {
+          alert('cant move');
+        }, 5);
+      }
+    }
+  }
 }
