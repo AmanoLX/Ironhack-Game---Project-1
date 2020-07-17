@@ -3,40 +3,41 @@ class Player extends Component {
     super(game, x, y, w, h);
   }
 
-  move(obstacle) {
+  move(obstaclesArray) {
     
     document.onkeydown = event => {
       const key = event.keyCode;
       const possibleKeysStrokes = [37, 38, 39, 40]; // arrow keys
 
-      // obstaclesArray.forEach((obstacle) => {
+      
+
+        
+
         if (possibleKeysStrokes.includes(key)) {
           switch (key) {
             case 37: // left arrow, x axis
-              if (this.x >= 10 && this.wallRightSide(obstacle)) {
+              if (this.x >= 10 && this.wallRightSide(obstaclesArray)) {
                 this.x -= 10;
               }
               break;
             case 38: // up arrow, y axis
-              if (this.y >= 10 && this.wallUpSide(obstacle)) {
+              if (this.y >= 10 && this.wallUpSide(obstaclesArray)) {
                 this.y -= 10;
               }
               break;
             case 39: // right arrow, x axis
-          console.log(obstacle)
-              if (this.x <= 490 - this.width && this.wallLeftSide(obstacle) ){
+              if (this.x <= 490 - this.width && this.wallLeftSide(obstaclesArray) ){
                 this.x += 10;
               }
               break;
             case 40: // down arrow, y axis
-              if (this.y <= 490 - this.height && this.wallDownSide(obstacle)) {
+              if (this.y <= 490 - this.height && this.wallDownSide(obstaclesArray)) {
                 this.y += 10;
               }
               break;
             }
           }
-        } 
-      // }
+      };
     }
 
   samaCollision(sama){
@@ -62,37 +63,58 @@ class Player extends Component {
     // }
   }
   
-  wallLeftSide(obstacle){
+  wallLeftSide(obstaclesArray){
+    const collisionArray = obstaclesArray.map((obstacle) => {
     console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
-    if(obstacle.initialX > this.x + this.width && obstacle.endY > this.y){
-      return false;
+    if(obstacle.initialX === this.x + this.width + 10 && obstacle.endY > this.y && obstacle.initialY < this.y + this.height){
+      return true;
     }else {
-      return true;
+      return false;
     }
+  })
+  console.log(collisionArray)
+    return collisionArray.includes(true) ? false : true
   }
 
-  wallRightSide(obstacle){
-    if(obstacle.initialX >= this.x && obstacle.endY > this.y){
-      return false;
-    }else {
-      return true;
-    }
+  wallRightSide(obstaclesArray){
+    const collisionArray = obstaclesArray.map((obstacle) => {
+      console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
+      if(obstacle.initialX === this.x - 10 && obstacle.endY > this.y && obstacle.initialY < this.y + this.height){
+        return true;
+      }else {
+        return false;
+      }
+    })
+    console.log(collisionArray)
+      return collisionArray.includes(true) ? false : true
+  
   }
 
-  wallUpSide(obstacle){
-    if(obstacle.initialY === this.y  && obstacle.initialX < this.x + this.width && obstacle.endX > this.x){
-      return false;
-    } else {
-      return true;
-    }
-  }
+  // wallUpSide(obstaclesArray){
 
-  wallDownSide(obstacle){
-    console.log(this.x, obstacle.initialX, this.y, obstacle.initialY)
-    if(obstacle.initialY === this.y + this.height && obstacle.initialX <= this.x && obstacle.endX > this.x){
-      return false;
-    } else {
-      return true;
-    }
-  }
+  //   const collisionArray = obstaclesArray.map((obstacle) => {
+  //     console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
+  //     if(obstacle.initialY === this.y  && obstacle.initialX < this.x + this.width && obstacle.endX > this.x){
+  //       return true;
+  //     }else {
+  //       return false;
+  //     }
+  //   })
+  //   console.log(collisionArray)
+  //     return collisionArray.includes(true) ? false : true
+  // }
+
+  // wallDownSide(obstaclesArray){
+
+  //   const collisionArray = obstaclesArray.map((obstacle) => {
+  //     console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
+  //     if(obstacle.initialY === this.y + this.height && obstacle.initialX <= this.x && obstacle.endX > this.x){
+  //       return true;
+  //     }else {
+  //       return false;
+  //     }
+  //   })
+  //   console.log(collisionArray)
+  //     return collisionArray.includes(true) ? false : true
+  // }
 }
