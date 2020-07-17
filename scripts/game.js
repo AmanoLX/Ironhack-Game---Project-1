@@ -44,23 +44,22 @@ class Game {
     // initialX, initialY, endX, endY
 
     this.obstacles.push(new Obstacle(this, 70, 0, 70, 100)); // 0 vertical
-    this.obstacles.push(new Obstacle(this, 70, 100, 200, 100)); // 1 horizontal
+    this.obstacles.push(new Obstacle(this, 70, 100, 230, 100)); // 1 horizontal
     this.obstacles.push(new Obstacle(this, 70, 170, 160, 170)); // 2 horizontal
-    this.obstacles.push(new Obstacle(this, 70, 170, 70, 450)); // 3 vertical
-    // this.obstacles.push(new Obstacle(this, 220, 100, 220, 230)); // 4 vertical
-    // this.obstacles.push(new Obstacle(this, 130, 230, 200, 230)); // 5 horizontal
-    // this.obstacles.push(new Obstacle(this, 130, 220, 130, 400)); // 6 vertical
-    // this.obstacles.push(new Obstacle(this, 200, 260, 120, 260));
-    // this.obstacles.push(new Obstacle(this, 120, 400, 300, 400));
-    // this.obstacles.push(new Obstacle(this, 300, 0, 300, 400));
-    // this.obstacles.push(new Obstacle(this, 360, 200, 500, 200));
-    // this.obstacles.push(new Obstacle(this, 360, 160, 500, 160));
-    // this.obstacles.push(new Obstacle(this, 360, 160, 360, 0));
-    // this.obstacles.push(new Obstacle(this, 360, 260, 360, 400));
-    // this.obstacles.push(new Obstacle(this, 360, 260, 440, 260));
-    // this.obstacles.push(new Obstacle(this, 440, 250, 440, 460));
-    // this.obstacles.push(new Obstacle(this, 60, 450, 440, 450));
-    // this.obstacles.push(new Obstacle(this, 260, 450, 260, 500));
+    this.obstacles.push(new Obstacle(this, 70, 170, 70, 500)); // 3 vertical
+    this.obstacles.push(new Obstacle(this, 230, 100, 230, 240)); // 4 vertical
+    this.obstacles.push(new Obstacle(this, 140, 240, 230, 240)); // 5 horizontal
+    this.obstacles.push(new Obstacle(this, 230, 240, 230, 310)); // 6 vertical
+    this.obstacles.push(new Obstacle(this, 140, 310, 230, 310)); // 7 horizontal
+    this.obstacles.push(new Obstacle(this, 140, 310, 140, 430)); // 8 vertical
+    this.obstacles.push(new Obstacle(this, 140, 430, 300, 430)); // 9 horizontal
+    this.obstacles.push(new Obstacle(this, 300, 0, 300, 430)); // 10 vertical
+    this.obstacles.push(new Obstacle(this, 370, 200, 370, 430)); // 11 vertical
+    this.obstacles.push(new Obstacle(this, 370, 200, 430, 200)); // 12 horizontal
+    this.obstacles.push(new Obstacle(this, 370, 130, 500, 130)); // 13 horizontal
+    this.obstacles.push(new Obstacle(this, 430, 200, 430, 500)); // 14 vertical
+    this.obstacles.push(new Obstacle(this, 370, 0, 370, 70)); // 15 vertical
+    this.obstacles.push(new Obstacle(this, 370, 70, 500, 70)); // 16 horizontal
   }
 
   clearCanvas() {

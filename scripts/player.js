@@ -90,31 +90,31 @@ class Player extends Component {
   
   }
 
-  // wallUpSide(obstaclesArray){
+  wallUpSide(obstaclesArray){
 
-  //   const collisionArray = obstaclesArray.map((obstacle) => {
-  //     console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
-  //     if(obstacle.initialY === this.y  && obstacle.initialX < this.x + this.width && obstacle.endX > this.x){
-  //       return true;
-  //     }else {
-  //       return false;
-  //     }
-  //   })
-  //   console.log(collisionArray)
-  //     return collisionArray.includes(true) ? false : true
-  // }
+    const collisionArray = obstaclesArray.map((obstacle) => {
+      console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
+      if(obstacle.initialY === this.y  && obstacle.initialX < this.x + this.width && obstacle.endX > this.x){
+        return true;
+      }else {
+        return false;
+      }
+    })
+    console.log(collisionArray)
+      return collisionArray.includes(true) ? false : true
+  }
 
-  // wallDownSide(obstaclesArray){
+  wallDownSide(obstaclesArray){
 
-  //   const collisionArray = obstaclesArray.map((obstacle) => {
-  //     console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
-  //     if(obstacle.initialY === this.y + this.height && obstacle.initialX <= this.x && obstacle.endX > this.x){
-  //       return true;
-  //     }else {
-  //       return false;
-  //     }
-  //   })
-  //   console.log(collisionArray)
-  //     return collisionArray.includes(true) ? false : true
-  // }
+    const collisionArray = obstaclesArray.map((obstacle) => {
+      console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
+      if(obstacle.initialY === this.y + this.height && obstacle.initialX <= this.x && obstacle.endX > this.x){
+        return true;
+      }else {
+        return false;
+      }
+    })
+    console.log(collisionArray)
+      return collisionArray.includes(true) ? false : true
+  }
 }
