@@ -50,23 +50,25 @@ class Player extends Component {
         <p>Yes you did it! Sama loves you!</p>
         <img src="./images/baby-sucking-icon.png" width="200px">
       `;
+
+      const gameSec = document.querySelector('#game-section');
+
+      setTimeout(() => {
+        gameSec.classList.add('inactive');
+      }, 5000);
+
+      const gameIntro = document.querySelector('#game-intro');
+      setTimeout(() => {
+        gameIntro.classList.remove('inactive');
+        gameIntro.classList.add('active');
+      }, 5500);
     }
-    
-    // if(sama.x >= this.x && sama.y > this.y){
-    //   console.log('you win!');
-    // }
-    // if(sama.y === this.y  && sama.x < this.x + this.width && sama.x > this.x){
-    //   console.log('you win!');
-    // }
-    // if(sama.y === this.y + this.height && sama.x <= this.x && sama.x > this.x) {
-    //   console.log('you win!');
-    // }
   }
   
   wallLeftSide(obstaclesArray){
     const collisionArray = obstaclesArray.map((obstacle) => {
     console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
-    if(obstacle.initialX === this.x + this.width + 10 && obstacle.endY > this.y && obstacle.initialY < this.y + this.height){
+    if(obstacle.initialX === this.x + this.width && obstacle.endY > this.y && obstacle.initialY < this.y + this.height){
       return true;
     }else {
       return false;
@@ -79,7 +81,7 @@ class Player extends Component {
   wallRightSide(obstaclesArray){
     const collisionArray = obstaclesArray.map((obstacle) => {
       console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
-      if(obstacle.initialX === this.x - 10 && obstacle.endY > this.y && obstacle.initialY < this.y + this.height){
+      if(obstacle.initialX === this.x && obstacle.endY > this.y && obstacle.initialY < this.y + this.height){
         return true;
       }else {
         return false;

@@ -3,7 +3,7 @@ class Game {
     this.canvas = document.getElementById('canvas');
     this.ctx = this.canvas.getContext('2d');
     this.player = new Player(this, 10, 0, 50, 50);
-    this.sama = new Sama(this, 450, 450, 50, 50);
+    this.sama = new Sama(this, 10, 100, 50, 50);
     this.obstacles = [];
     this.x = 0;
     this.y = 0;

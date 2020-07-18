@@ -4,7 +4,7 @@ const modal = document.querySelector('.modal')
 class Timer {
   constructor() {
     this.timerEl = timerEl;
-    this.startingSeconds = 31;
+    this.startingSeconds = 5;
   }
   
   updateCountdown() {  
@@ -34,5 +34,17 @@ class Timer {
       <p>Oh no! Too late... Now Sama is crying. Try again to make her calm.</p>
       <img src="./images/baby-crying-icon.png" width="200px">
     `;
+
+    setTimeout(() => {
+      gameSec.classList.add('inactive');
+    }, 5000);
+
+    const gameIntro = document.querySelector('#game-intro');
+    setTimeout(() => {
+      gameIntro.classList.remove('inactive');
+      gameIntro.classList.add('active');
+    }, 5750);
   }
+
+  
 }
