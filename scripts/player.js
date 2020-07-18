@@ -9,34 +9,30 @@ class Player extends Component {
       const key = event.keyCode;
       const possibleKeysStrokes = [37, 38, 39, 40]; // arrow keys
 
-      
-
-        
-
-        if (possibleKeysStrokes.includes(key)) {
-          switch (key) {
-            case 37: // left arrow, x axis
-              if (this.x >= 10 && this.wallRightSide(obstaclesArray)) {
-                this.x -= 10;
-              }
-              break;
-            case 38: // up arrow, y axis
-              if (this.y >= 10 && this.wallUpSide(obstaclesArray)) {
-                this.y -= 10;
-              }
-              break;
-            case 39: // right arrow, x axis
-              if (this.x <= 490 - this.width && this.wallLeftSide(obstaclesArray) ){
-                this.x += 10;
-              }
-              break;
-            case 40: // down arrow, y axis
-              if (this.y <= 490 - this.height && this.wallDownSide(obstaclesArray)) {
-                this.y += 10;
-              }
-              break;
+      if (possibleKeysStrokes.includes(key)) {
+        switch (key) {
+          case 37: // left arrow, x axis
+            if (this.x >= 10 && this.wallRightSide(obstaclesArray)) {
+              this.x -= 10;
             }
+            break;
+          case 38: // up arrow, y axis
+            if (this.y >= 10 && this.wallUpSide(obstaclesArray)) {
+              this.y -= 10;
+            }
+            break;
+          case 39: // right arrow, x axis
+            if (this.x <= 490 - this.width && this.wallLeftSide(obstaclesArray) ){
+              this.x += 10;
+            }
+            break;
+          case 40: // down arrow, y axis
+            if (this.y <= 490 - this.height && this.wallDownSide(obstaclesArray)) {
+              this.y += 10;
+            }
+            break;
           }
+        }
       };
     }
 
@@ -52,7 +48,6 @@ class Player extends Component {
       `;
 
       const gameSec = document.querySelector('#game-section');
-
       setTimeout(() => {
         gameSec.classList.add('inactive');
       }, 5000);
@@ -69,12 +64,11 @@ class Player extends Component {
     const collisionArray = obstaclesArray.map((obstacle) => {
     console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
     if(obstacle.initialX === this.x + this.width && obstacle.endY > this.y && obstacle.initialY < this.y + this.height){
-      return true;
-    }else {
-      return false;
-    }
-  })
-  console.log(collisionArray)
+        return true;
+      }else {
+        return false;
+      }
+    });
     return collisionArray.includes(true) ? false : true
   }
 
@@ -86,14 +80,11 @@ class Player extends Component {
       }else {
         return false;
       }
-    })
-    console.log(collisionArray)
-      return collisionArray.includes(true) ? false : true
-  
+    });
+    return collisionArray.includes(true) ? false : true
   }
 
   wallUpSide(obstaclesArray){
-
     const collisionArray = obstaclesArray.map((obstacle) => {
       console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
       if(obstacle.initialY === this.y  && obstacle.initialX < this.x + this.width && obstacle.endX > this.x){
@@ -101,13 +92,11 @@ class Player extends Component {
       }else {
         return false;
       }
-    })
-    console.log(collisionArray)
-      return collisionArray.includes(true) ? false : true
+    });
+    return collisionArray.includes(true) ? false : true
   }
 
   wallDownSide(obstaclesArray){
-
     const collisionArray = obstaclesArray.map((obstacle) => {
       console.log(obstacle.initialX, this.x, obstacle.endY, this.y)
       if(obstacle.initialY === this.y + this.height && obstacle.initialX <= this.x && obstacle.endX > this.x){
@@ -115,8 +104,7 @@ class Player extends Component {
       }else {
         return false;
       }
-    })
-    console.log(collisionArray)
-      return collisionArray.includes(true) ? false : true
+    });
+    return collisionArray.includes(true) ? false : true
   }
 }
