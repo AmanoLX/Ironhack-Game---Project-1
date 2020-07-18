@@ -61,7 +61,7 @@ class Player extends Component {
       setTimeout(() => {
         gameIntro.classList.remove('inactive');
         gameIntro.classList.add('active');
-      }, 5500);
+      }, 5750);
     }
   }
   
